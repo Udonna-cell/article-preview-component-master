@@ -1,0 +1,255 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Manrope medium";
+  src: url("./fonts/static/Manrope-Medium.ttf");
+}
+@font-face {
+  font-family: "Manrope bold";
+  src: url("./fonts/static/Manrope-Bold.ttf");
+}
+@font-face {
+  font-family: "Manrope-Regular";
+  src: url("./fonts/static/Manrope-Regular.ttf");
+}
+@font-face {
+  font-family: "Manrope-ExtraLight";
+  src: url("./fonts/static/Manrope-ExtraLight.ttf");
+}
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+  --padding: 39px 30px 20px 30px;
+  --padding-top: 39px;
+  --padding-right-left: 30px;
+  --padding-bottom: 20px;
+  --radius: 10px;
+}
+img {
+  width: 100%;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px;
+  background-color: var(--Light-Grayish-Blue);
+  font-family: "Manrope-Regular";
+  font-size: 16px;
+  gap: 10px;
+  position: relative;
+}
+section.card {
+  background-color: #fff;
+  width: 328px;
+  /* max-width: 734px; */
+  border-radius: var(--radius);
+  box-shadow: 5px 8px 10px hsla(212, 23%, 69%,0.3);
+}
+section.card > figure img {
+  border-radius: var(--radius) var(--radius) 0 0;
+  pointer-events: none;
+}
+section.card > article > main {
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14px;
+}
+article h1,
+article p {
+  width: 270px;
+}
+article h1 {
+  font-size: 17px;
+  font-family: "Manrope bold";
+}
+aside {
+  padding: 0 var(--padding-right-left);
+  padding-bottom: var(--padding-bottom);
+  margin-top: 5px;
+  position: relative;
+  /* bottom: 0; */
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow: hidden;
+}
+aside,
+aside > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+aside > div:first-child {
+  gap: 16px;
+}
+aside > div.share-btn,
+section.share > div.share-btn {
+  background-color: var(--Light-Grayish-Blue);
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  /* position: relative; */
+  /* z-index: 1; */
+  /* top: 20%; */
+  /* right: 10%; */
+}
+aside > div.share-btn img {
+  width: 15px;
+}
+div.author h2 {
+  width: 116px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+div.author p {
+  width: 80px;
+  font-size: 13px;
+}
+div.profile {
+  width: 40px;
+}
+div.profile img {
+  border-radius: 50%;
+}
+section.share {
+  background-color: var(--Very-Dark-Grayish-Blue);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 150%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--padding-right-left);
+  z-index: 1;
+  /* display: none; */
+}
+section.share > div:not(.share-btn) {
+  display: flex;
+  gap: 22px;
+}
+
+section.share > div:not(.share-btn) h3 {
+  width: 64px;
+  color: var(--Light-Grayish-Blue);
+  font-weight: 200;
+  font-family: "Manrope-ExtraLight";
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+div.icon {
+  width: 23px;
+  cursor: pointer;
+}
+section.share > div.share-btn {
+  background-color: var(--Desaturated-Dark-Blue);
+}
+.attribution {
+  position: absolute;
+  bottom: 2%;
+}
+
+@media (min-width: 912px) {
+  :root {
+    --padding-top: 27px;
+    --padding-right-left: 27px;
+    --padding-bottom: 27px;
+    --padding: var(--padding-top) var(--padding-right-left)
+      var(--padding-bottom) var(--padding-right-left);
+    --radius: 10px;
+  }
+  section.card {
+    width: 733px;
+    height: 283px;
+    display: flex;
+    overflow: visible;
+  }
+  section.card > figure {
+    flex-basis: 286px;
+  }
+  section.card > figure img {
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 0;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+  }
+  
+  section.card > article {
+    flex-grow: 1;
+    /* display: block; */
+    /* position: relative; */
+  }
+
+  section.card > article h1 {
+    width: 351px;
+    font-size: 20px;
+    /* margin-bottom: 20px; */
+  }
+  section.card > article > main p {
+    width: 356px;
+    font-size: 13px;
+  }
+  aside {
+    /* padding-bottom: var(--padding-bottom); */
+    width: 100%;
+    left: 0;
+    /* position: absolute; */
+    /* bottom: 14px; */
+    padding-bottom: 0;
+    overflow: visible;
+  }
+  section.share {
+    width: 248px;
+    top: -130%;
+    left: 62% !important;
+    border-radius: 5px;
+    display: none;
+    box-shadow: 1px 3px 7px var(--Grayish-Blue);
+  }
+  section.share::before {
+    content: "";
+    width: 0px;
+    position: absolute;
+    right: 110px;
+    bottom: -44%;
+    border-top: 10px solid var(--Very-Dark-Grayish-Blue);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  section.share > div.share-btn {
+    display: none;
+  }
+  section.share > div:not(.share-btn) h3 {
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
